@@ -12,6 +12,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 0;
 }
 
 .initial-page .logo{
@@ -56,10 +57,11 @@ body {
 }
 
 .deck-page{
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;    
+    z-index: -1;
 }
 
 .deck-page header{
@@ -126,15 +128,89 @@ body {
     color: #333333;    
 }
 
-.deck-page .flaschcard ion-icon{
+.deck-page .flashcard ion-icon{
     width: 13px;
     height: 15px;
+}
+
+.deck-page .flashcard-back, .flashcard-front{
+    width: 182px;
+    height: 80px;
+    margin-bottom: 15px;
+    position: relative;
+    
+    background: #FFFFD5;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;    
+}
+
+.deck-page .flashcard-back h2, .flashcard-front h2{
+    height: 28px;
+    margin-top: 6px;
+    padding: 7px;
+    position: absolute;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.7em;
+    line-height: 14px;
+    text-align: left;
+    
+    color: #333333;    
+}
+
+.deck-page .flashcard-back img{
+    width: 20px;
+    height: 13px;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 155px;
+
+    background: url("assets/img/turnaround.svg");
+}
+
+.deck-page .flashcard-front .answers{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;  
+    margin-top: 47px;
+}
+
+.deck-page .flashcard-front .answers button{
+    width: 55px;
+    height: 24px;
+    margin:3px;
+    border-radius: 5px;
+    border-style: none;
+
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 7px;
+    text-align: center;
+    
+    color: #FFFFFF;    
+}
+
+.deck-page .flashcard-front .answers .forget{
+    background: #FF3030;
+}
+
+.deck-page .flashcard-front .answers .ok{
+    background: #FF922E;
+}
+
+.deck-page .flashcard-front .answers .perfect{
+    background: #2FBE34;
 }
 
 .deck-page footer{
     width: 100%;
     height: 50px;
     bottom: 0px;
+    position: absolute;
     
     background: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
@@ -145,6 +221,5 @@ body {
     font-size: 12px;
     line-height: 50px;
     color: #333333;  
-    position: absolute;
     text-align: center;
 }
