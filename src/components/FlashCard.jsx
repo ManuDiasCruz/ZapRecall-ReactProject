@@ -5,6 +5,11 @@ export default function FlashCard({flashcard, index, FCAnswer}){
     const [status, setStatus] = useState("clicked");
     const [completedAnswer, setCompletedAnswer] = useState("");
     
+    function updateStatus(status){
+        FCAnswer(status); 
+        setStatus("completed"); 
+        setCompletedAnswer(status)
+    }
     
     return (
         status == "clicked" ?
@@ -25,24 +30,15 @@ export default function FlashCard({flashcard, index, FCAnswer}){
                     <h2>{answer}</h2>
                     <div className="answers">
                         <button className="forget" 
-                            onClick={() => {
-                                FCAnswer("forget");
-                                setStatus("completed"); 
-                                setCompletedAnswer("forget")}}>
+                            onClick={() => updateStatus("forget")}>
                                 Não lembrei
                         </button>
                         <button className="ok" 
-                            onClick={() => {
-                                FCAnswer("ok");
-                                setStatus("completed"); 
-                                setCompletedAnswer("ok")}}>
+                            onClick={() => updateStatus("ok")}>
                             <span>Quase não lembrei</span>
                         </button>
                         <button className="perfect" 
-                            onClick={() => {
-                                FCAnswer("perfect"); 
-                                setStatus("completed"); 
-                                setCompletedAnswer("perfect")}}>
+                            onClick={() => updateStatus("perfect")}>
                             Zap!
                         </button>
                     </div>
