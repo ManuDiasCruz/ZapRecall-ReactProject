@@ -24,6 +24,9 @@ export default function DeckPage({deck}){
                 { userAnswers.length < numberOfFlashCards ?
                     <footer>
                         <p>{userAnswers.length}/{numberOfFlashCards} CONCLUÍDOS</p>
+                        <div className="final-answers">
+                            {userAnswers.map(anwser => <img className={anwser} src="" alt="" />)}
+                        </div>
                     </footer>
                     :
                     forgetAtLeastOne>0?

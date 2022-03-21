@@ -3,12 +3,10 @@ export default function FlashCard({flashcard, index, FCAnswer}){
     const {id, question, answer} = flashcard
 
     const [status, setStatus] = useState("clicked");
-    const [completedAnswer, setCompletedAnswer] = useState("");
     
     function updateStatus(status){
         FCAnswer(status); 
-        setStatus("completed"); 
-        setCompletedAnswer(status)
+        setStatus(status); 
     }
     
     return (
@@ -44,8 +42,9 @@ export default function FlashCard({flashcard, index, FCAnswer}){
                     </div>
                 </article>
                 :
-                status == "completed" ?
-                <article className={completedAnswer}>
+                status == "forget" || status == "ok" || status == "perfect"  ?
+                <article className={status}>
+                    {console.log("STATUS: "+status)}
                     <h2 className="title">FlashCard {index}</h2>
                     <img src="" alt="" />
                 </article>
