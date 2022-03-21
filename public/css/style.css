@@ -96,14 +96,14 @@ body {
     transform: rotate(0.58deg);    
 }
 
-.deck-page .flashcardlist{
+.deck{
     top: 85px;
     height: 110vw;
     position: relative;
     overflow: scroll;
 }
 
-.deck-page .flashcard{
+.deck .flashcard{
     width: 182px;
     height: 40px;
     margin-bottom: 5px;
@@ -118,7 +118,7 @@ body {
     justify-content: space-between;
 }
 
-.deck-page .flashcard .title{
+.deck .title{
     font-family: 'Recursive';
     font-style: normal;
     font-weight: 700;
@@ -128,12 +128,112 @@ body {
     color: #333333;    
 }
 
-.deck-page .flashcard ion-icon{
+.deck .flashcard img{
     width: 13px;
     height: 15px;
+    background: url("assets/img/play.svg");
 }
 
-.deck-page .flashcard-back, .flashcard-front{
+.deck .forget{
+    height: 40px;
+    margin-bottom: 5px;
+    padding: 15px;
+    
+    background: #FFFFFF;
+    border: 2px solid #FF3030;
+    width: 182px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.deck .forget .title{
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    border-color: #FF3030;
+    text-decoration-line: line-through;
+    color: #FF3030;    
+}
+
+.deck .forget img{
+    width: 17px;
+    height: 17px;
+    background: url("assets/img/forget.svg");
+}
+
+.deck .ok{
+    height: 40px;
+    margin-bottom: 5px;
+    padding: 15px;
+    
+    background: #FFFFFF;
+    border: 2px solid #FF922E;
+    width: 182px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.deck .ok .title{
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    border-color: #FF922E;
+    color: #FF922E;
+    text-decoration-line: line-through;   
+}
+
+.deck .ok img{
+    width: 17px;
+    height: 17px;
+    background: url("assets/img/ok.svg");
+}
+
+.deck .perfect{
+    height: 40px;
+    margin-bottom: 5px;
+    padding: 15px;
+        
+    background: #FFFFFF;
+    border: 2px solid #2FBE34;
+    width: 182px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.deck .perfect .title{
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    border-color: #2FBE34;
+    text-decoration-line: line-through;
+    color: #2FBE34;  
+}
+
+.deck .perfect img{
+    width: 17px;
+    height: 17px;
+    background: url("assets/img/perfect.svg");
+}
+
+.deck-page .deck .flashcard-back, .flashcard-front{
     width: 182px;
     height: 80px;
     margin-bottom: 15px;
@@ -144,7 +244,7 @@ body {
     border-radius: 5px;    
 }
 
-.deck-page .flashcard-back h2, .flashcard-front h2{
+.deck-page .deck .flashcard-back h2, .flashcard-front h2{
     height: 28px;
     margin-top: 6px;
     padding: 7px;
@@ -159,7 +259,7 @@ body {
     color: #333333;    
 }
 
-.deck-page .flashcard-back img{
+.deck-page .deck .flashcard-back img{
     width: 20px;
     height: 13px;
     position: absolute;
@@ -169,7 +269,7 @@ body {
     background: url("assets/img/turnaround.svg");
 }
 
-.deck-page .flashcard-front .answers{
+.deck-page .deck .flashcard-front .answers{
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -178,7 +278,7 @@ body {
     margin-top: 47px;
 }
 
-.deck-page .flashcard-front .answers button{
+.deck-page .deck .flashcard-front .answers button{
     width: 55px;
     height: 24px;
     margin:3px;
@@ -194,15 +294,15 @@ body {
     color: #FFFFFF;    
 }
 
-.deck-page .flashcard-front .answers .forget{
+.deck-page .deck .flashcard-front .answers .forget{
     background: #FF3030;
 }
 
-.deck-page .flashcard-front .answers .ok{
+.deck-page .deck .flashcard-front .answers .ok{
     background: #FF922E;
 }
 
-.deck-page .flashcard-front .answers .perfect{
+.deck-page .deck .flashcard-front .answers .perfect{
     background: #2FBE34;
 }
 
@@ -222,4 +322,64 @@ body {
     line-height: 50px;
     color: #333333;  
     text-align: center;
+}
+
+.deck-page .final{
+    width: 100%;
+    height: 112px;
+    bottom: 0px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.deck-page .final-title{
+    width: 100px;
+    height: 20px;
+    margin-top: 15px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.deck-page .final-title p{
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    
+    color: #333333;    
+}
+
+.deck-page .final .congrats{
+    width: 18px;
+    height: 18px;
+
+    background: url("assets/img/party.svg");
+}
+
+.deck-page .final .maybe-next{
+    width: 18px;
+    height: 18px;
+
+    background: url("assets/img/sad.svg");
+}
+
+.deck-page .final span{
+    width: 170px;
+    height: 28px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+
+    color: #333333;
 }
