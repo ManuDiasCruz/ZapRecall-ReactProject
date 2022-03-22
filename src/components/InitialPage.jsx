@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import DeckPage from "./DeckPage";
 
 export default function InitialPage(){
@@ -40,24 +40,32 @@ export default function InitialPage(){
         
         }
     ]
-    let selectedDeck = [...decks[0].deck]
+    /*const [selectedDeck, setSelectedDeck] = useState("");let selectedDeck = [...decks[0].deck]*/
+    let selectedDeck="";
 
     function sortArray(array){
         array.sort(()=> Math.random() - 0.5);
     }
-
-    sortArray(selectedDeck)
 
     return ( visibility ?
         
             <main className="initial-page">
                 <img className="logo" src="" alt="" />
                 <h1 className="title">ZapRecall</h1>
+                <select value={selectedDeck}>
+                    <option value="" selected disabled > Escolha seu deck</option>
+                    {decks.map((deck, key) => 
+                            <option value={key} key={key}> 
+                                {deck.name} {" - " + deck.deck.length + " Cards"}
+                            </option>
+                            )
+                    }
+                </select>
                 <button className="start-button" 
                     onClick={()=> {setVisibility(false)}
                     }>Iniciar Recall!</button>
             </main>
             :
-            <DeckPage deck={selectedDeck}/>
+            <DeckPage deck={sortArray(selectedDeck)}/>
     )
 }

@@ -1,19 +1,24 @@
 import Deck from "./Deck";
-import { useState } from "react";
+import { useState, CodePush } from "react";
+
+
 
 export default function DeckPage({deck}){
     const [userAnswers, setUserAnswers] = useState([]);
     const [numberOfFlashCards, setNumberOfFlashCards] = useState(0);
-    const [visibility, setVisibility] = useState(true);
     const [forgetAtLeastOne, setForgetAtLeastOne] = useState(0);
 
+    let visible = true;
+
+    function resetDeck(){
+        CodePush.restartApp();
+    }
 
     function updateListOfAnswers(newAnswer){
         setUserAnswers([...userAnswers, newAnswer]);
     }
-    let answersList = "";
     
-    return ( visibility ?
+    return ( visible ?
             <main className="deck-page">
                 <header>
                     <img src="" alt="" />
@@ -30,7 +35,7 @@ export default function DeckPage({deck}){
                     </footer>
                     :
                     forgetAtLeastOne>0?
-                        <footer className="final">
+                        <footer>
                             <div className="final-title">
                                 <img className="maybe-next"></img>
                                 <p>PUTZ!</p>
@@ -39,9 +44,10 @@ export default function DeckPage({deck}){
                             <div className="final-answers">
                                 {userAnswers.map(anwser => <img className={anwser} src="" alt="" />)}
                             </div>
+                            <button className="reset-recall" onClick={()=>resetDeck()}>REINICIAR RECALL</button>
                         </footer>
                         :
-                        <footer className="final">
+                        <footer>
                             <div className="final-title">
                                 <img className="congrats"></img>
                                 <p>PARABÉNS!</p>
@@ -50,6 +56,7 @@ export default function DeckPage({deck}){
                             <div className="final-answers">
                                 {userAnswers.map(anwser => <img className={anwser} src="" alt="" />)}
                             </div>
+                            <button className="reset-recall" onClick={()=>resetDeck()}>REINICIAR RECALL</button>
                         </footer>
                 }
             </main>
