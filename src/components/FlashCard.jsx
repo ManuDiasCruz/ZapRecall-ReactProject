@@ -29,7 +29,7 @@ export default function FlashCard({flashcard, index, FCAnswer}){
                     <div className="answers">
                         <button className="forget" 
                             onClick={() => updateStatus("forget")}>
-                                Não lembrei
+                            <span>Não lembrei</span>
                         </button>
                         <button className="ok" 
                             onClick={() => updateStatus("ok")}>
@@ -37,7 +37,7 @@ export default function FlashCard({flashcard, index, FCAnswer}){
                         </button>
                         <button className="perfect" 
                             onClick={() => updateStatus("perfect")}>
-                            Zap!
+                            <span>Zap!</span>
                         </button>
                     </div>
                 </article>

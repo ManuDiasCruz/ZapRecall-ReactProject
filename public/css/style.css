@@ -22,7 +22,7 @@ body {
     height: 65px;
     
     background: url("./.././../assets/img/zaprecall.svg");
-    background-size: cover;
+    background-size:cover;
     border:none;
 }
 
@@ -74,7 +74,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .deck-page header img{
@@ -137,6 +137,8 @@ body {
     width: 13px;
     height: 15px;
     background: url("./../assets/img/play.svg");
+    background-size: cover;
+    border:none;
 }
 
 .deck .forget{
@@ -170,6 +172,8 @@ body {
     width: 17px;
     height: 17px;
     background: url("./../assets/img/forget.svg");
+    background-size: cover;
+    border:none;
 }
 
 .deck .ok{
@@ -203,6 +207,8 @@ body {
     width: 17px;
     height: 17px;
     background: url("./../assets/img/ok.svg");
+    background-size: cover;
+    border:none;
 }
 
 .deck .perfect{
@@ -236,6 +242,8 @@ body {
     width: 17px;
     height: 17px;
     background: url("./../assets/img/perfect.svg");
+    background-size: cover;
+    border:none;
 }
 
 .deck-page .deck .flashcard-back, .flashcard-front{
@@ -272,14 +280,17 @@ body {
     margin-left: 155px;
 
     background: url("./../assets/img/turnaround.svg");
+    background-size: cover;
+    border:none;
 }
 
 .deck-page .deck .flashcard-front .answers{
+    width: 100%;
     position: absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;  
+    justify-content: space-between;  
     margin-top: 47px;
 }
 
@@ -289,6 +300,9 @@ body {
     margin:3px;
     border-radius: 5px;
     border-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     font-family: 'Recursive';
     font-style: normal;
@@ -361,6 +375,8 @@ body {
     height: 18px;
 
     background: url("./../assets/img/party.svg");
+    background-size: cover;
+    border:none;
 }
 
 .maybe-next{
@@ -368,6 +384,8 @@ body {
     height: 18px;
 
     background: url("./../assets/img/sad.svg");
+    background-size: cover;
+    border:none;
 }
 
 .deck-page footer span{
@@ -397,6 +415,8 @@ body {
     width: 14px;
     height: 14px;
     background: url("./../assets/img/forget.svg");
+    background-size: cover;
+    border:none;
 }
 
 .final-answers .ok{
@@ -404,6 +424,8 @@ body {
     width: 14px;
     height: 14px;
     background: url("./../assets/img/ok.svg");
+    background-size: cover;
+    border:none;
 }
 
 .final-answers .perfect{
@@ -411,6 +433,8 @@ body {
     width: 14px;
     height: 14px;
     background: url("./../assets/img/perfect.svg");
+    background-size: cover;
+    border:none;
 }
 
 .reset-recall{
@@ -429,4 +453,147 @@ body {
     text-align: center;
 
     color: #FFFFFF;    
+}
+
+@media (min-width: 250px){
+    .initial-page .logo{
+        width: 85px;
+        height: 95px;
+    }
+
+    .initial-page .title{
+        width: 200px;
+        height: 50px;
+        
+        font-size: 40px;
+        line-height: 50px;
+        letter-spacing: -0.012em;
+    }
+    
+    .initial-page .start-button{
+        width: 230px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 50px;
+    }
+
+    .deck-page header{
+        top: 50px;
+        width: 20%;
+        display: row;
+    }
+
+    .deck-page header img{
+        width: 40px;
+        height: 50px;
+    }
+    
+    .deck-page header h1{
+        width: 100%;        
+        font-size: 40px;
+        line-height: 22px; 
+    }
+    
+    .deck{
+        top: 150px;
+        width: 50%;
+        height: 110vw;
+        position: relative;
+        overflow: scroll;
+    }
+    
+    .deck .flashcard, .deck .forget, .deck .ok, .deck .perfect{
+        width: 100%;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+
+    .deck-page .deck .flashcard-back, .flashcard-front{
+        width: 100%;
+        min-height: 120px;
+        margin-bottom: 25px;
+    }
+    
+    .deck .title, .deck .forget .title, .deck .ok .title, .deck .perfect .title{
+        font-size: 18px;
+        line-height: 25px;
+    }
+    
+    .deck .flashcard img{
+        width: 17px;
+        height: 20px;
+    }
+
+    .deck-page .deck .flashcard-back h2, .flashcard-front h2{
+        height: 40px;
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 18px;
+        line-height: 20px;   
+    }
+    
+    .deck-page .deck .flashcard-back img{
+        width: 30px;
+        height: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .deck-page .deck .flashcard-front .answers button{
+        width: 150px;
+        height: 40px;
+        margin: 20px;
+        font-size: 12px;
+    }
+
+    .deck-page footer{
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        position: fixed;
+    }
+
+    .congrats, 
+    .maybe-next{
+        width: 25px;
+        height: 25px;
+    }
+    
+    .final-answers{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px;
+    }
+    
+    .final-answers .forget,   
+    .final-answers .ok, 
+    .final-answers .perfect{
+        margin-left: 8px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .deck-page .final-title{
+        width: 40%;
+        height: 60px;
+    }
+
+    .deck-page footer p,
+    .deck-page footer span{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }   
+       
+    .reset-recall{
+        width: 180px;
+        height: 40px;
+    
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 40px;
+    }
 }
